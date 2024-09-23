@@ -1,45 +1,40 @@
 package com.sql;
 
+import com.sql.dao.ClientDao;
+import com.sql.dao.Invoice10Dao;
 import com.sql.dao.InvoiceDao;
-import com.sql.entity.Invoice;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import com.sql.entity.Invoice10;
 
 public class DaoRunner {
+
     public static void main(String[] args) {
-       InvoiceDao invoiceDao = InvoiceDao.getInstance();
+
+        InvoiceDao invoiceDao = InvoiceDao.getInstance();
 //        List<Invoice> allInvoices = invoiceDao.findAll();
 //
-//        for (Invoice invoice: allInvoices) {
+//        for (Invoice invoice: allInvoices){
 //            System.out.println(invoice);
 //        }
-
-
-//        Invoice invoice = new Invoice(20,"222-222-22",3, BigDecimal.valueOf(222.22),BigDecimal.valueOf(222.22),
-//                LocalDate.of(2024,01,01),LocalDate.of(2024,02,02),LocalDate.of(2024,01,01));
+//        Invoice invoice = new Invoice(21,"222-222-22",3, BigDecimal.valueOf(222.22),
+//                BigDecimal.valueOf(222.22), LocalDate.of(2024,01,01),
+//                LocalDate.of(2024,02,02),LocalDate.of(2024,01,01));
 //        invoiceDao.save(invoice);
 
-
-//        Invoice invoice = new Invoice(2,"333-333-33",5, BigDecimal.valueOf(222.22),BigDecimal.valueOf(222.22),
-//                LocalDate.of(2024,01,01),LocalDate.of(2024,02,02),LocalDate.of(2024,01,01));
-//        invoiceDao.update(invoice);
-
-
-//       invoiceDao.deleteById(20);
+//        System.out.println("invoiceDao.findById(1) = " + invoiceDao.findById(1));
+//        Optional<Invoice> maybeInvoice = invoiceDao.findById(1);
+//        invoiceDao.joinMethod(2);
 
 
-//        Optional<Invoice> invoice = invoiceDao.findById(3);  // Поиск записи с ID = 1
-//
-//        invoice.ifPresentOrElse(
-//                inv -> System.out.println("Invoice found: " + inv),
-//                () -> System.out.println("Invoice not found")
-//        );
+//        InvoiceClientDao instance = InvoiceClientDao.getInstance();
+//        System.out.println("instance.findById(2) = " + instance.findById(6));
 
-
-        invoiceDao.join(2);
+//          invoiceDao.subqueryMethod(3);
+//        ClientDao clientDao = ClientDao.getClientDao();
+//        System.out.println("clientDao.findById(1) = " + clientDao.findById(1));
+        Invoice10Dao instance = Invoice10Dao.getInstance();
+//        System.out.println("instance.findById(1) = " + instance.findById(1));
+        instance.findAll().forEach(invoice10 -> System.out.println(invoice10));
 
     }
+
 }

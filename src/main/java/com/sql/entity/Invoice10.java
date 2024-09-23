@@ -10,16 +10,13 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class Invoice {
+public class Invoice10 {
     private Integer invoiceId;
     private String number;
-    private Integer clientId;
+    private Client clientId;
     private BigDecimal invoiceTotal;
     private BigDecimal paymentTotal;
     private LocalDate invoiceDate;
     private LocalDate dueDate;
     private LocalDate paymentDate;
-
-    //session.save(invoice)
-
 }
